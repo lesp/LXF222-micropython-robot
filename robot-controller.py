@@ -1,8 +1,8 @@
 from microbit import *
 import radio
 radio.on()
+display.scroll("Turn the wheel to drive the robot")
 while True:
-    #sleep(200)
     gesture = accelerometer.current_gesture()
     print(gesture)
     if gesture == "left":
