@@ -1,7 +1,7 @@
 from microbit import *
 import radio
 radio.on()
-display.scroll("Turn the wheel to drive the robot")
+display.scroll("Turn the wheel to drive the robot",delay=50)
 while True:
     gesture = accelerometer.current_gesture()
     print(gesture)
@@ -17,8 +17,7 @@ while True:
     elif gesture == "down":
         display.show(Image.ARROW_S)
         radio.send('reverse')
-    
-    if button_b.was_pressed():
+    elif button_b.was_pressed():
         display.show(Image.SURPRISED)
         radio.send('brakes')
         
